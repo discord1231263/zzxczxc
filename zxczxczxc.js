@@ -32,7 +32,7 @@ client.on('message', (message) => {
   if(message.author.bot) return;
 
   if(message.content == '/zhelp') {
-    return message.reply('```명령어 : /전체공지  /청소 ');
+    return message.reply('```명령어 : /전체공지  /청소 ```');
   }
   if(message.content.startsWith('/전체공지')) {
     if(checkPermission(message)) return
