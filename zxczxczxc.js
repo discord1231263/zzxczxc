@@ -31,13 +31,13 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'p') {
-    return message.reply('pong');
+  if(message.content == '/zhelp') {
+    return message.reply('```명령어 : /전체공지  /청소 ');
   }
-  if(message.content.startsWith('!전체공지')) {
+  if(message.content.startsWith('/전체공지')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!전체공지'.length);
+      let contents = message.content.slice('/전체공지'.length);
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
         x.user.send(`<@${message.author.id}> ${contents}`);
@@ -49,10 +49,10 @@ client.on('message', (message) => {
     }
   }
 
-  if(message.content.startsWith('!청')) {
+  if(message.content.startsWith('/청소')) {
     if(checkPermission(message)) return
 
-    var clearLine = message.content.slice('!청 '.length);
+    var clearLine = message.content.slice('/청소 '.length);
     var isNum = !isNaN(clearLine)
 
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
