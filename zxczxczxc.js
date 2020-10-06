@@ -10,15 +10,6 @@ client.on('ready', () => {
   console.log('켰다.');
 });
 
-client.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  const newUser = member.user;
-  const welcomeChannel = guild.channels.find(channel => channel.name == welcomeChannelName);
-
-  welcomeChannel.send(`<@${newUser.id}> ${welcomeChannelComment}\n`);
-
-  member.addRole(guild.roles.find(role => role.name == "게스트"));
-});
 
 client.on("guildMemberRemove", (member) => {
   const guild = member.guild;
@@ -31,24 +22,10 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == '/zhelp') {
-    return message.reply('```명령어 : /전체공지  /청소 ```');
-  }
-  if(message.content.startsWith('/전체공지')) {
+  if(message.content == '/짱구명령어') {
     if(checkPermission(message)) return
-    if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('/전체공지'.length);
-      message.member.guild.members.array().forEach(x => {
-        if(x.user.bot) return;
-        x.user.send(`<@${message.author.id}> ${contents}`);
-      });
-  
-      return message.reply('공지를 전송했습니다.');
-    } else {
-      return message.reply('채널에서 실행해주세요.');
-    }
+    return message.reply('```명령어 : /청소 ```');
   }
-
   if(message.content.startsWith('/청소')) {
     if(checkPermission(message)) return
 
