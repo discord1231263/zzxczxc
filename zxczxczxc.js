@@ -66,7 +66,7 @@ client.on('message', (message) => {
         let embed = new Discord.MessageEmbed()
         embed.setTitle(`${message.member.displayName}님의 투표`)
             for(let i=0; i<list.length; i++) {
-                temp += 0
+                temp += 1
                 tempString += `**${temp}. ${list[i]}**\n`
             }
         embed.setDescription(tempString)
