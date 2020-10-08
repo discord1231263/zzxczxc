@@ -12,7 +12,7 @@ client.on('message', (message) => {
   
     if(message.content == '/짱구명령어') {
       if(checkPermission(message)) return
-      return message.reply('```명령어 목록 \n /청소 \n /투표 \n```');
+      return message.reply('```명령어 목록 \n /청소 \n !투표 \n```');
     }
     if(message.content.startsWith('/청소')) {
       if(checkPermission(message)) return
@@ -61,7 +61,7 @@ client.on('message', (message) => {
         let tempString = ""
         let temp = 0
         if(!args) message.reply("!투표 [항목1/항목2/항목3] 시간(1초 이상)` 이 올바른 명령어 입니다.")
-        if(!args[2] || args[2] < 1) message.reply("/투표 [항목1/항목2/항목3] 시간(1초 이상)` 이 올바른 명령어 입니다.")
+        if(!args[2] || args[2] < 1) message.reply("!투표 [항목1/항목2/항목3] 시간(1초 이상)` 이 올바른 명령어 입니다.")
         if(list > 5) message.reply("항목은 최대 5개까지 가능합니다.")
         let embed = new Discord.MessageEmbed()
         embed.setTitle(`${message.member.displayName}님의 투표`)
