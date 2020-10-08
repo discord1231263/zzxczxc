@@ -12,7 +12,7 @@ client.on('message', (message) => {
   
     if(message.content == '/짱구명령어') {
       if(checkPermission(message)) return
-      return message.reply('```명령어 : /청소 \n /```');
+      return message.reply('```명령어 : /청소 \n /투표 \n```');
     }
     if(message.content.startsWith('/청소')) {
       if(checkPermission(message)) return
