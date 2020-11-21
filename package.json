@@ -1,10 +1,10 @@
 {
-  "name": "zxczxczxc",
+  "name": "zzxzxc",
   "version": "1.0.0",
   "description": "",
-  "main": "zxczxczxc.js",
+  "main": "zzxzxc.js",
   "scripts": {
-    "zzxzxc": "node zxczxczxc.js"
+    "z": "node zzxzxc.js"
   },
   "dependencies": {
     "discord.js": "^12.5.1"
