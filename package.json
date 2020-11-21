@@ -7,6 +7,6 @@
     "zzxzxc": "node zxczxczxc.js"
   },
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^15.2.1"
   }
 }
