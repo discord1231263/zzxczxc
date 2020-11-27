@@ -8,8 +8,8 @@ client.on('ready', () => {
  
 client.on("message", (message) => {
     if (message.author.bot) return
-  if (message.content.startsWith("!청소")) { 
-    var clearLine = message.content.slice("!청소 ".length)
+  if (message.content.startsWith("/청소")) { 
+    var clearLine = message.content.slice("/청소 ".length)
     var isNum = !isNaN(clearLine)
 
     if (isNum && (clearLine <= 0 || 100 < clearLine)) {
@@ -44,7 +44,7 @@ client.on("message", (message) => {
     }
   }});
   client.on("messageDelete", (messageDelete) => {
-    const channel = messageDelete.guild.channels.find(ch => ch.name === '메세지삭제기록');
+    const channel = messageDelete.guild.channels.find(ch => ch.name === '삭제기록');
     channel.send(`${messageDelete.author}` + "님이" + '**```' + `${messageDelete.content}` + "```**메세지를 삭제하셨습니다. \n유저 아이디 : " + `${messageDelete.author.id}`);
   });     
 client.login(token);
